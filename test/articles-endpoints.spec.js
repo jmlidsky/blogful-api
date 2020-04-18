@@ -13,9 +13,9 @@ describe('Articles Endpoints', function () {
         app.set('db', db)
     })
 
-    after('disconnect from db', () => db.destroy())
-
     before('clean the table', () => db('blogful_articles').truncate())
+
+    after('disconnect from db', () => db.destroy())
 
     context('Given there are articles in the database', () => {
         const testArticles = [
